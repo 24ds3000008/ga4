@@ -6,13 +6,14 @@ on:
       - main
   workflow_dispatch:
   schedule:
-    - cron: '0 4 * * *'  # Daily at 04:00 UTC
+    - cron: '0 4 * * *'
 
 permissions:
   contents: write
 
 jobs:
   commit:
+    name: Daily Commit by 24ds3000008@ds.study.iitm.ac.in
     runs-on: ubuntu-latest
 
     steps:
