@@ -1,19 +1,28 @@
 name: Daily Commit by 24ds3000008@ds.study.iitm.ac.in
 
+name: Daily Commit
+
 on:
   push:
     branches:
       - main
+    # ✅ Sets run name when triggered by push
+    run-name: Daily Commit by 24ds3000008@ds.study.iitm.ac.in
+
   workflow_dispatch:
+    # ✅ Sets run name when manually triggered
+    inputs: {}
+    run-name: Daily Commit by 24ds3000008@ds.study.iitm.ac.in
+
   schedule:
-    - cron: '0 4 * * *'
+    - cron: '0 4 * * *'  # Daily at 04:00 UTC
+    # ❌ Unfortunately, `run-name` not supported for `schedule` yet
 
 permissions:
   contents: write
 
 jobs:
   commit:
-    name: Daily Commit by 24ds3000008@ds.study.iitm.ac.in
     runs-on: ubuntu-latest
 
     steps:
