@@ -4,22 +4,18 @@ on:
   push:
     branches:
       - main
-    # ✅ Custom run name for push
-    run-name: Daily Commit by 24ds3000008@ds.study.iitm.ac.in
 
   workflow_dispatch:
-    # ✅ Custom run name for manual run
-    run-name: Daily Commit by 24ds3000008@ds.study.iitm.ac.in
 
   schedule:
     - cron: '0 4 * * *'  # Runs daily at 04:00 UTC
-    # ⚠️ `run-name:` not yet supported under schedule
 
 permissions:
   contents: write
 
 jobs:
   commit:
+    name: Daily Commit by 24ds3000008@ds.study.iitm.ac.in  # ✅ This becomes the Actions run title
     runs-on: ubuntu-latest
 
     steps:
