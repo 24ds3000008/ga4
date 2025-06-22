@@ -1,9 +1,9 @@
 name: Daily Commit
 
 on:
-  schedule:
-    - cron: '30 2 * * *'  # Runs daily at 02:30 UTC
-  workflow_dispatch:  # Allows manual triggering
+  push:
+    branches:
+      - main
 
 permissions:
   contents: write  # Ensure GitHub Actions can push changes
