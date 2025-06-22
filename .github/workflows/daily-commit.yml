@@ -6,7 +6,7 @@ on:
       - main
   workflow_dispatch:
   schedule:
-    - cron: '0 4 * * *'  # Runs daily at 04:00 UTC
+    - cron: '0 4 * * *'  # Daily at 04:00 UTC
 
 permissions:
   contents: write
@@ -37,5 +37,5 @@ jobs:
           git add last_run.txt
           git commit \
             --author="GitHub Action <24ds3000008@ds.study.iitm.ac.in>" \
-            -m "Automated daily commit at $(date)" || echo "No changes to commit"
+            -m "Automated daily commit at $(date) by 24ds3000008@ds.study.iitm.ac.in" || echo "No changes to commit"
           git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }} HEAD:main
