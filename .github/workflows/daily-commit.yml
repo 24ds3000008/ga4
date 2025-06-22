@@ -9,7 +9,7 @@ on:
     - cron: '0 4 * * *'  # Daily at 04:00 UTC
 
 permissions:
-  contents: write  # Required to allow pushing changes
+  contents: write
 
 jobs:
   commit:
@@ -30,8 +30,8 @@ jobs:
 
       - name: Commit and Push Changes
         env:
-          GITHUB_TOKEN: ${{ secrets.52mLcbmGwk1WYqxQ4na0bFdGDveHgK0qT0zy }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git add last_run.txt
           git commit -m "Automated daily commit at $(date)" || echo "No changes to commit"
-          git push https://x-access-token:${52mLcbmGwk1WYqxQ4na0bFdGDveHgK0qT0zy}@github.com/${{ github.repository }} HEAD:main
+          git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }} HEAD:main
