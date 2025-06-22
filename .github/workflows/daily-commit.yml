@@ -4,7 +4,9 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch:  # Optional: allow manual runs
+  workflow_dispatch:
+  schedule:
+    - cron: '0 4 * * *'  # Daily at 04:00 UTC
 
 permissions:
   contents: write  # Required to allow pushing changes
