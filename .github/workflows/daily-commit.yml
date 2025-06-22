@@ -30,8 +30,8 @@ jobs:
 
       - name: Commit and Push Changes
         env:
-          GITHUB_TOKEN: ${{ secrets.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 }}
+          GITHUB_TOKEN: ${{ secrets.52mLcbmGwk1WYqxQ4na0bFdGDveHgK0qT0zy }}
         run: |
           git add last_run.txt
           git commit -m "Automated daily commit at $(date)" || echo "No changes to commit"
-          git push https://x-access-token:${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}@github.com/${{ github.repository }} HEAD:main
+          git push https://x-access-token:${52mLcbmGwk1WYqxQ4na0bFdGDveHgK0qT0zy}@github.com/${{ github.repository }} HEAD:main
